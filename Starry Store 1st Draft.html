@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <title> Starry Store  </title>
+
+
+</head>
+
+<body>
+<style>
+p {
+  color: #43655A;
+}
+
+body {
+  background-color:LightGray ;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 3px black; }
+.myButton {
+	box-shadow:inset -3px 0px 0px 0px #cf866c;
+	background:linear-gradient(to bottom, #BBA79C 5%, #FE9B57 100%);
+	background-color:#FE9B57;
+	border-radius:4px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	padding:9px 100px;
+	text-decoration:none;
+	text-shadow:0px 2px 0px #854629;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #FE9B57 5%, #BBA79C 100%);
+	background-color:#bc3315;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.p1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#pimg {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+.container {
+  position: relative;
+}
+
+.shopcenter {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+}
+
+#shop { 
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+</style>
+
+<div id="header">
+
+
+	<!-- here is all header elements including navigation buttons, name, and logo -->
+
+   
+	<img src="imsg/Starry_Logo.png" alt "STARRY STORE" width="120" height="120">
+
+
+<div class="center">
+	<a href="#DynamicBar" class="myButton">Home</a>
+	<a href="#About" class="myButton">About</a>
+	<a href="#Products" class="myButton">Products</a>
+	<a href="#shop" class="myButton">Customize</a>
+	<a href="#Contact" class="myButton">Contact</a>
+
+</div>
+
+ <hr>
+
+
+<div id="DynamicBar">
+
+<img id="theImage" src="imsg/acdc.png" alt "sticker" width="333" height="333" >
+
+</div>
+
+<script>
+// Create an array of image sources
+var images = ["imsg/acdc.png", "imsg/cd1.png", "imsg/m_polster.png", "imsg/q_poster.png", "imsg/top.png"];
+
+// Get the image element by its id
+var image = document.getElementById("theImage");
+
+// Set the initial index to 0
+var index = 0;
+
+// Define a function to move the image
+function move() {
+  // Increment the index by 1
+  index++;
+
+  // If the index is equal to the length of the array, reset it to 0
+  if (index == images.length) {
+    index = 0;
+  }
+
+  // Set the image source to the current index of the array
+  image.src = images[index];
+
+  // Set the image style left property to the index times 100 pixels
+  image.style.left = index * 100 + "px";
+}
+
+// Set an interval to call the move function every second
+setInterval(move, 1000);
+</script>
+ 
+ <hr>
+
+<div id="About">
+
+	<h2 class="title"> About </h2>
+
+<img id="pimg" src="imsg/about.png" alt "sticker" width="320" height="333" >
+
+	<h3>
+		Customized Printing-Solutions for Art & Music Fans Since 2019
+	<h3>
+		Selling (T-shirts - Mugs - Pins - CDs - Stickers - Posters - etc) for all the Music and Arts Enthusiasts in Egypt. 
+
+
+
+</div>
+
+<hr>
+
+<div id="Products">
+
+	<h2 class="title"> Our Products </h2>
+
+	<img id="pimg" src="imsg/am.png" alt "sticker" width="280" height="300">
+<p class="p1">
+<b>
+Arctic Monkeys T-shirt
+</b>
+<p>
+$20
+</p>
+	<img id="pimg" src="imsg/bs.png" alt "sticker" width="280" height="300">
+<p class="p1">
+<b>
+Black Sabbath T-shirt
+</b>
+<p>
+$20
+</p>
+	<img id="pimg" src="imsg/nv.png" alt "sticker" width="280" height="300">
+<p class="p1">
+<b>
+Nirvana T-shirt
+</b>
+<p>
+$20
+</p>
+</div>
+<hr>
+
+<div class="container">
+  <img id="shop" src="imsg/shopnow.png" alt "sticker" width="1300" height="300">
+  <div class="shopcenter">
+<p><b><a href="https://www.instagram.com/direct/t/112112253512806" target="_blank">SHOP NOW!</a></b></p>
+</div>
+<hr>
+
+<div id="contact">
+
+	<h2 class="title"> Contact Us! </h2>
+
+	<form	 action="D:\sql\htdocs\starry.php" method="Post" target="">
+
+		<label for="name"> Your Name: </label>
+		<input id="name" type="text" name="Name" placeholder="StarryCustomer" required>
+<br><br>
+		<label for="email"> Your Email: </label>
+		<input id="email" type="email" name="Email" Placeholder="Starry@gmail.com" required>
+<br><br>
+		<label for="Phone"> Phone Number:</label>
+		<input id="Phone" type="text" name="Number" placeholder="01012111585" required>
+<br>
+		<p>
+		Subscribe to our Newsletter.
+		</p>
+		<input type="radio" id="newsletter" name="newsletter" value="Yes">
+  		<label for="html">Yes</label><br>
+		<input type="radio" id="newsletter" name="newsletter" value="No">
+  		<label for="html">No</label><br>
+<br>
+		<Button type="submit"> Submit </Button>
+	</form>
+<br><br>    
+<a href="https://www.instagram.com/starry_store101/"> Instagram </a>
+<br>
+<a href="https://www.facebook.com/starry.store101/"> Facebook </a>
+
+
+</div>
+
+</body>
+</html>
